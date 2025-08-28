@@ -6,7 +6,7 @@ BEGIN
   DataSourceBehavior  = 0  'vbNone
   MTSTransactionMode  = 0  'NotAnMTSObject
 END
-Attribute VB_Name = "InsumosX"
+Attribute VB_Name = "REG_INDICE_GASTOSx"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = False
@@ -16,14 +16,26 @@ Attribute VB_Ext_KEY = "Top_Level" ,"No"
 Option Explicit
 
 'local variable(s) to hold property value(s)
-Private mvarCodigo As String 'local copy
 Private mvarNome As String 'local copy
+Private mvarPercentual As String 'local copy
+Public Property Let Percentual(ByVal vData As String)
+'used when assigning a value to the property, on the left side of an assignment.
+'Syntax: X.Percentual = 5
+    mvarPercentual = vData
+End Property
+
+
+Public Property Get Percentual() As String
+'used when retrieving value of a property, on the right side of an assignment.
+'Syntax: Debug.Print X.Percentual
+    Percentual = mvarPercentual
+End Property
+
+
+
 Public Property Let Nome(ByVal vData As String)
 'used when assigning a value to the property, on the left side of an assignment.
 'Syntax: X.Nome = 5
-    vData = Replace(vData, "=", "")
-    vData = Replace(vData, """", "")
-    vData = Trim(vData)
     mvarNome = vData
 End Property
 
@@ -32,24 +44,6 @@ Public Property Get Nome() As String
 'used when retrieving value of a property, on the right side of an assignment.
 'Syntax: Debug.Print X.Nome
     Nome = mvarNome
-End Property
-
-
-
-Public Property Let Codigo(ByVal vData As String)
-'used when assigning a value to the property, on the left side of an assignment.
-'Syntax: X.Codigo = 5
-    vData = Replace(vData, "=", "")
-    vData = Replace(vData, """", "")
-    vData = Trim(vData)
-    mvarCodigo = vData
-End Property
-
-
-Public Property Get Codigo() As String
-'used when retrieving value of a property, on the right side of an assignment.
-'Syntax: Debug.Print X.Codigo
-    Codigo = mvarCodigo
 End Property
 
 

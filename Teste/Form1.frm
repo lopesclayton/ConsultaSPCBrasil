@@ -174,8 +174,10 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+'Option Explicit
+
 'Dim Myf        As New cFuncoes
-Dim Software   As New Software
+Dim Software As New Software
 
 Private Sub Command1_Click()
     Dim con As New SPC_Brasil_Consulta
@@ -205,6 +207,36 @@ Private Sub Command1_Click()
         MsgBox con.Msg_Erro, vbCritical, "ERRO"
     Else
         MsgBox "terminou"
+
+
+        MsgBox con.REG_LIMITECREDSUG(1).Limite_Sugerido
+
+        Dim msg As String
+        msg = "Classificacao: " & con.REG_COMPROM_RENDA.Classificacao & vbCrLf
+        msg = msg & "Faixa: " & con.REG_COMPROM_RENDA.Faixa & vbCrLf
+        msg = msg & "Flag_Endividamento: " & con.REG_COMPROM_RENDA.Flag_Endividamento & vbCrLf
+        msg = msg & "Percentual: " & con.REG_COMPROM_RENDA.Percentual & vbCrLf
+        MsgBox msg
+
+        msg = ""
+        For i = 1 To con.REG_INDICE_GASTOS.Count
+            msg = msg & "Nome: " & con.REG_INDICE_GASTOS(i).Nome & vbCrLf
+            msg = msg & "Classificacao: " & con.REG_INDICE_GASTOS(i).Percentual & vbCrLf
+        Next i
+        MsgBox msg
+
+
+        msg = ""
+        For i = 1 To con.REG_INDICE_PONTUAL.Count
+            msg = msg & "Segmento            : " & con.REG_INDICE_PONTUAL(i).Nome & vbCrLf
+            For x = 1 To con.REG_INDICE_PONTUAL(i).PERIODOS.Count
+                msg = msg & "Descrição           : " & con.REG_INDICE_PONTUAL(i).PERIODOS(x).Descricao & vbCrLf
+                msg = msg & "Pagamento Comprovado: " & con.REG_INDICE_PONTUAL(i).PERIODOS(x).Pagamento_Comprovado & vbCrLf
+                msg = msg & "Percentual          : " & con.REG_INDICE_PONTUAL(i).PERIODOS(x).Percentual & vbCrLf
+            Next x
+        Next i
+        MsgBox msg
+
 
         MsgBox con.Produtos.Count
         'MsgBox con.Produtos.Item(1).Nome
@@ -636,8 +668,8 @@ Private Function SpcBrasil_SituacaoCPF(ByVal Situacao As String) As String
 End Function
 
 Private Sub Command3_Click()
-    Dim con    As New SPC_Brasil_Consulta
-    Dim i      As Integer
+    Dim con As New SPC_Brasil_Consulta
+    Dim i As Integer
 
     If con.ListarProdutosDisponiveis("2166977", "30012019", Producao) = True Then
         For i = 0 To con.Produtos.Count
@@ -647,7 +679,7 @@ Private Sub Command3_Click()
 End Sub
 
 Private Sub Command4_Click()
-    Dim con    As New SPC_Brasil_Consulta
+    Dim con As New SPC_Brasil_Consulta
     'Usuario = "395793"
     'Senha = "12012016"
     'ACodigoProduto = "116"

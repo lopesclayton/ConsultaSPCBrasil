@@ -47,10 +47,15 @@ Attribute VB_Ext_KEY = "Member30" ,"REG_095"
 Attribute VB_Ext_KEY = "Member31" ,"REG_096"
 Attribute VB_Ext_KEY = "Member32" ,"REG_097"
 Attribute VB_Ext_KEY = "Member33" ,"REG_CAPITALSOCIAL"
-Attribute VB_Ext_KEY = "Member34" ,"REG_XML_LIMITE_CREDITO_SUGERIDO"
+Attribute VB_Ext_KEY = "Member34" ,"REG_INDICE_GASTOS"
+Attribute VB_Ext_KEY = "Member35" ,"REG_INDICE_PONTUAL"
+Attribute VB_Ext_KEY = "Member36" ,"REG_LIMITECREDSUG"
+Attribute VB_Ext_KEY = "Member37" ,"REG_RENDA_PRESUMIDA"
+Attribute VB_Ext_KEY = "Member38" ,"REG_COMPROM_RENDA"
+Attribute VB_Ext_KEY = "Member39" ,"REG_SCORE_POSITIVO"
 Option Explicit
 
-Dim objDom     As Object
+Dim objDom As Object
 Dim strTipoConsumidor As String                                      'F FISICA / J JURIDICA
 
 Public Enum eTipoCheque
@@ -152,6 +157,77 @@ Private mvarProdutos As Produtos
 Private mvarREG_CAPITALSOCIAL As REG_CAPITALSOCIAL
 Private mvarREG_HISTORICOPAGAMENTO As REG_HISTORICOPGTO
 Private mvarREG_LIMITECREDSUG As REG_LIMITECREDSUG
+Private mvarREG_COMPROM_RENDA As REG_COMPROM_RENDA
+Private mvarREG_INDICE_GASTOS As REG_INDICE_GASTOS
+Private mvarREG_SCORE_POSITIVO As REG_SCORE_POSITIVO
+Private mvarREG_RENDA_PRESUMIDA As REG_RENDA_PRESUMIDA
+Private mvarREG_INDICE_PONTUAL As REG_INDICE_PONTUAL
+
+
+Public Property Get REG_INDICE_PONTUAL() As REG_INDICE_PONTUAL
+    If mvarREG_INDICE_PONTUAL Is Nothing Then
+        Set mvarREG_INDICE_PONTUAL = New REG_INDICE_PONTUAL
+    End If
+
+
+    Set REG_INDICE_PONTUAL = mvarREG_INDICE_PONTUAL
+End Property
+
+
+Public Property Set REG_INDICE_PONTUAL(vData As REG_INDICE_PONTUAL)
+    Set mvarREG_INDICE_PONTUAL = vData
+End Property
+
+
+
+Public Property Get REG_RENDA_PRESUMIDA() As REG_RENDA_PRESUMIDA
+    Set REG_RENDA_PRESUMIDA = mvarREG_RENDA_PRESUMIDA
+End Property
+
+
+Public Property Set REG_RENDA_PRESUMIDA(vData As REG_RENDA_PRESUMIDA)
+    Set mvarREG_RENDA_PRESUMIDA = vData
+End Property
+
+
+
+Public Property Get REG_SCORE_POSITIVO() As REG_SCORE_POSITIVO
+    Set REG_SCORE_POSITIVO = mvarREG_SCORE_POSITIVO
+End Property
+
+
+Public Property Set REG_SCORE_POSITIVO(vData As REG_SCORE_POSITIVO)
+    Set mvarREG_SCORE_POSITIVO = vData
+End Property
+
+
+
+
+Public Property Get REG_INDICE_GASTOS() As REG_INDICE_GASTOS
+    If mvarREG_INDICE_GASTOS Is Nothing Then
+        Set mvarREG_INDICE_GASTOS = New REG_INDICE_GASTOS
+    End If
+
+
+    Set REG_INDICE_GASTOS = mvarREG_INDICE_GASTOS
+End Property
+
+
+Public Property Set REG_INDICE_GASTOS(vData As REG_INDICE_GASTOS)
+    Set mvarREG_INDICE_GASTOS = vData
+End Property
+
+
+
+Public Property Get REG_COMPROM_RENDA() As REG_COMPROM_RENDA
+    Set REG_COMPROM_RENDA = mvarREG_COMPROM_RENDA
+End Property
+
+
+Public Property Set REG_COMPROM_RENDA(vData As REG_COMPROM_RENDA)
+    Set mvarREG_COMPROM_RENDA = vData
+End Property
+
 
 
 Public Property Get REG_LIMITECREDSUG() As REG_LIMITECREDSUG
@@ -298,10 +374,21 @@ Private Sub Class_Initialize()
 
     'create the mREG_CAPITALSOCIAL object when the SPC_Brasil_Consulta class is created
     Set mvarREG_CAPITALSOCIAL = New REG_CAPITALSOCIAL
+    'create the mREG_COMPROM_RENDA object when the SPC_Brasil_Consulta class is created
+    Set mvarREG_COMPROM_RENDA = New REG_COMPROM_RENDA
+    'create the mREG_SCORE_POSITIVO object when the SPC_Brasil_Consulta class is created
+    Set mvarREG_SCORE_POSITIVO = New REG_SCORE_POSITIVO
+    'create the mREG_RENDA_PRESUMIDA object when the SPC_Brasil_Consulta class is created
+    Set mvarREG_RENDA_PRESUMIDA = New REG_RENDA_PRESUMIDA
 End Sub
 
 Private Sub Class_Terminate()
-  Set mvarREG_LIMITECREDSUG = Nothing
+    Set mvarREG_INDICE_PONTUAL = Nothing
+    Set mvarREG_RENDA_PRESUMIDA = Nothing
+    Set mvarREG_SCORE_POSITIVO = Nothing
+    Set mvarREG_INDICE_GASTOS = Nothing
+    Set mvarREG_COMPROM_RENDA = Nothing
+    Set mvarREG_LIMITECREDSUG = Nothing
     Set mvarREG_HISTORICOPAGAMENTO = Nothing
     Set mvarREG_CAPITALSOCIAL = Nothing
     Set mvarProdutos = Nothing
@@ -407,7 +494,7 @@ End Property
 
 Function Monta_String_Envio() As String
 
-    Dim Texto  As String
+    Dim Texto As String
 
     On Error GoTo Consulta_Error
 
@@ -566,7 +653,7 @@ Private Function Formata_CEP(ByVal CEP As String) As String
 End Function
 
 Private Function Formata_Fone(ByVal Texto As String) As String
-    Dim tam    As Integer
+    Dim tam As Integer
     Texto = RemoveNaoNumericos(Texto)
     tam = Len(Texto)
 
@@ -863,7 +950,7 @@ End Sub
 
 Sub Monta_Reg_006(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
     '' -- Resposta de Grafia PJ - máximo de 10 ocorrências
 
     If TipoResposta = Host Then
@@ -975,7 +1062,7 @@ End Sub
 
 Sub Monta_Reg_010(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
 
     If TipoResposta = Host Then
         With REG_010.Add
@@ -1022,7 +1109,7 @@ End Sub
 
 Sub Monta_Reg_020(ByVal Texto As String, ByVal TipoCheque As eTipoCheque, ByVal TipoResposta As eTipoRespostaSpc)
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
     Dim strTipoCheque As String
 
     '' RESPOSTA DOS CHEQUES
@@ -1155,7 +1242,7 @@ End Sub
 
 Sub Monta_Reg_025(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
     '' -- BANCO, AGENCIA, CONTA, COM DOCUMENTO DIFERENTE DO CONSULTADO
 
     If TipoResposta = Host Then
@@ -1226,7 +1313,7 @@ Sub Monta_Reg_030(ByVal Texto As String, ByVal TipoRestposta As eTipoRespostaSpc
 '' -- PROTESTOS
 
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
 
     If TipoRestposta = Host Then
         With REG_030.Add
@@ -1269,7 +1356,7 @@ Sub Monta_Reg_040(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
 ''--// Resposta de Ações - máximo de 05 ocorrências
 
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
 
 
     If TipoResposta = Host Then
@@ -1316,7 +1403,7 @@ Sub Monta_Reg_050(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
 ''--// Resposta de Credito Concedito - máximo de 09 ocorrências
 
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
 
 
     If TipoResposta = Host Then
@@ -1352,7 +1439,7 @@ Sub Monta_Reg_060(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
 ''--// alerta-documento  quando for resposta xml
 
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
 
     If TipoResposta = Host Then
         With REG_060.Add
@@ -1394,7 +1481,7 @@ Sub Monta_Reg_070(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
 ''--/// RESPOSTA DE CONSULTAS REALIZADAS
 
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
 
     If TipoResposta = Host Then
         With REG_070.Add
@@ -1571,7 +1658,7 @@ End Sub
 
 Sub Monta_Reg_086(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
 
     If TipoResposta = Host Then
         With REG_086.Add
@@ -1629,7 +1716,7 @@ End Sub
 Sub Monta_Reg_092(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
 ''--/// RESPOSTA DE CHEQUES SUSTADOS
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
 
     If TipoResposta = Host Then
         With REG_092.Add
@@ -1678,7 +1765,7 @@ Sub Monta_Reg_095(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
 ''--// RESPOSTA DA SINTESE CADASTRAL
 
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
 
     If TipoResposta = Host Then
 
@@ -1787,7 +1874,7 @@ Sub Monta_Reg_CapitalSocial(ByVal Texto As String, ByVal TipoResposta As eTipoRe
 ''--// RESPOSTA DA SINTESE CADASTRAL
 
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
 
     If TipoResposta = Host Then
     ElseIf TipoResposta = xml Then
@@ -1813,7 +1900,7 @@ Sub Monta_Reg_HistoricoPagamento(ByVal Texto As String, ByVal TipoResposta As eT
 ''--// RESPOSTA DA SINTESE CADASTRAL
 
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
 
     If TipoResposta = Host Then
     ElseIf TipoResposta = xml Then
@@ -2367,7 +2454,7 @@ Sub Monta_Reg_096(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
 '' -- Sócios Proprietarios
 
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
 
     If TipoResposta = Host Then
         With REG_096.Add
@@ -2409,6 +2496,98 @@ Sub Monta_Reg_096(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
     End If
 End Sub
 
+Sub Monta_Reg_XML_ScoreCadastroPositivo(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
+    Dim Caminho As String
+    Dim I As Integer
+
+    If TipoResposta = Host Then
+    ElseIf TipoResposta = xml Then
+        Caminho = "score-cadastro-positivo/detalhe-score-cadastro-positivo"
+        With REG_SCORE_POSITIVO
+            .Risco = PegaValorCampoXML(Caminho, I, "", "indice-risco-credito-score")
+            .Mensagem = PegaValorCampoXML(Caminho, I, "", "mensagem")
+            .ProbabilidadeInadimplencia = PegaValorCampoXML(Caminho, I, "", "probabilidadeInadimplencia")
+            .Score = PegaValorCampoXML(Caminho, I, "", "score")
+            .ScoreMaximo = PegaValorCampoXML(Caminho, I, "", "score-maximo-escala")
+        End With
+    End If
+
+End Sub
+
+Sub Monta_Reg_XML_RendaPresumida(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
+    Dim Caminho As String
+    Dim I As Integer
+
+    If TipoResposta = Host Then
+    ElseIf TipoResposta = xml Then
+        Caminho = "renda-presumida-spc/detalhe-renda-presumida-spc"
+        With REG_RENDA_PRESUMIDA
+            .Mediana = PegaValorCampoXML(Caminho, I, "", "mediana")
+        End With
+    End If
+
+End Sub
+
+
+Sub Monta_Reg_XML_IndicePontualidade(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
+    Dim Caminho As String
+    Dim I As Integer
+    Dim X As Integer
+    Dim Node
+
+    If TipoResposta = Host Then
+    ElseIf TipoResposta = xml Then
+        Caminho = "indice-pontualidade-pagamento-cadastro-positivo/detalhe-indice-pontualidade-pagamento-cadastro-positivo/segmentos"
+        For I = 0 To objDom.selectNodes("resultado/" & Caminho).length - 1
+            With REG_INDICE_PONTUAL.Add
+                .Nome = PegaValorCampoXML(Caminho, I, "", "nome")
+                Set Node = objDom.selectNodes("resultado/" & Caminho).Item(I)
+                For X = 0 To Node.selectNodes("periodos").length - 1
+                    With .PERIODOS.Add
+                        .Pagamento_Comprovado = PegaValorCampoXML(Caminho, I, "periodos", "pagamento-comprovado", False, X)
+                        .Descricao = PegaValorCampoXML(Caminho, I, "periodos", "descricao", False, X)
+                        .Percentual = PegaValorCampoXML(Caminho, I, "periodos", "porcentual", False, X)
+                    End With
+                Next X
+            End With
+        Next I
+    End If
+
+End Sub
+Sub Monta_Reg_XML_IndiceGastos(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
+    Dim Caminho As String
+    Dim I As Integer
+
+    If TipoResposta = Host Then
+    ElseIf TipoResposta = xml Then
+        Caminho = "indice-comportamento-gastos-cadastro-positivo/detalhe-indice-comportamento-gastos-cadastro-positivo/segmentos"
+        For I = 0 To objDom.selectNodes("resultado/" & Caminho).length - 1
+            With REG_INDICE_GASTOS.Add
+                .Nome = PegaValorCampoXML(Caminho, I, "", "nome")
+                .Percentual = PegaValorCampoXML(Caminho, I, "", "porcentual-representatividade")
+            End With
+        Next I
+    End If
+
+End Sub
+Sub Monta_Reg_XML_CompromentimentoRenda(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
+    Dim Caminho As String
+    Dim I As Integer
+
+    If TipoResposta = Host Then
+    ElseIf TipoResposta = xml Then
+        Caminho = "comprometimento-renda-mensal-pf/detalhe-comprometimento-renda-mensal-pf"
+
+        With REG_COMPROM_RENDA
+            .Classificacao = PegaValorCampoXML(Caminho, I, "", "classificacao-endividamento", True)
+            .Faixa = PegaValorCampoXML(Caminho, I, "", "faixa", True)
+            .Flag_Endividamento = PegaValorCampoXML(Caminho, I, "", "flag-endividamento", True)
+            .Percentual = PegaValorCampoXML(Caminho, I, "", "percentual", True)
+        End With
+    End If
+
+
+End Sub
 Sub Monta_Reg_XML_LimiteCreditoSugerido(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
 
     Dim Caminho As String
@@ -2429,7 +2608,7 @@ Sub Monta_Reg_097(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
 '' -- Participacao societaria da Pessoa Fisica
 
     Dim Caminho As String
-    Dim I      As Integer
+    Dim I As Integer
 
     If TipoResposta = Host Then
 
@@ -2467,7 +2646,7 @@ End Sub
 
 Function Pega_Resultado_Arquivo(ByVal Arquivo As String) As String
 ''' USADO SOMENTE PARA TESTE
-    Dim Texto  As String
+    Dim Texto As String
 
     Close #1
     Open Arquivo For Input As #1
@@ -2495,7 +2674,7 @@ Public Function ConsultarViaWebService(ByVal Usuario As String, _
     Dim sRequisicao As String
     Dim strUrl As String
     Dim strSoapAction As String
-    Dim I      As Integer
+    Dim I As Integer
     Dim strOutput As String
 
     'Usuario = "395793"
@@ -2633,7 +2812,7 @@ Private Function PostWebservice(ByVal User As String, ByVal Password As String, 
     Dim objDom As Object
     Dim objXmlHttp As Object
     Dim strRet As String
-    Dim Auth   As String
+    Dim Auth As String
     'Dim intPos1          As Integer
     'Dim intPos2          As Integer
 
@@ -2681,9 +2860,9 @@ Err_PW:
 
 End Function
 
-Private Function PegaValorCampoXML(ByVal Caminho As String, Item As Integer, ByVal SubCaminho As String, ByVal NomeAtributo As String, Optional ByVal ProcurarNode As Boolean) As String
-    Dim Pai    As String
-    Dim Node   As Object
+Private Function PegaValorCampoXML(ByVal Caminho As String, Item As Integer, ByVal SubCaminho As String, ByVal NomeAtributo As String, Optional ByVal ProcurarNode As Boolean, Optional ByVal SubItem As Integer) As String
+    Dim Pai As String
+    Dim Node As Object
 
 
     Pai = "/resultado/"
@@ -2698,7 +2877,7 @@ Private Function PegaValorCampoXML(ByVal Caminho As String, Item As Integer, ByV
     ElseIf SubCaminho = "" Then
         PegaValorCampoXML = Node.Item(Item).Attributes.getNamedItem(NomeAtributo).Text
     Else
-        PegaValorCampoXML = Node.Item(Item).selectNodes(SubCaminho).Item(0).Attributes.getNamedItem(NomeAtributo).Text
+        PegaValorCampoXML = Node.Item(Item).selectNodes(SubCaminho).Item(SubItem).Attributes.getNamedItem(NomeAtributo).Text
     End If
     Set Node = Nothing
     On Error GoTo 0
@@ -2773,10 +2952,15 @@ Private Sub Trata_Respostas_WebService()
             Monta_Reg_092 StrResposta, xml                           '--// CONTUMACIA  ** NAO ACHEI NENHUM CPF QUE RETORNASSE
             Monta_Reg_096 StrResposta, xml                           '--// SOCIOS
             Monta_Reg_097 StrResposta, xml                           '--// PARTICIPACAO SOCIETÁRIA
-            
+
             ''-//
-            Monta_Reg_XML_LimiteCreditoSugerido StrResposta, xml                           '--// PARTICIPACAO SOCIETÁRIA
-            
+            Monta_Reg_XML_LimiteCreditoSugerido StrResposta, xml     '--// LIMITE DE CREDITO SUGERIDO
+            Monta_Reg_XML_CompromentimentoRenda StrResposta, xml     ''// COMPROMENTIMENTO DE RENDA MENSAL PF
+            Monta_Reg_XML_IndiceGastos StrResposta, xml              ''// INDICE COMPORTAMENTO DE GASTOS NO CADASTRO POSITIVO
+            Monta_Reg_XML_IndicePontualidade StrResposta, xml        ''// INDICE PONTUALIDADE PAGAMENTO NO CADASTRO POSITIVO
+            Monta_Reg_XML_ScoreCadastroPositivo StrResposta, xml     ''// MOSTRA O SCORE DO CADASTRO POSITIVO
+            Monta_Reg_XML_RendaPresumida StrResposta, xml            ''// RENDA PRESUMIDA
+
         End If
 
         '        Exit Sub
