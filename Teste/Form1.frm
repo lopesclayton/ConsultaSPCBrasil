@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{C0A63B80-4B21-11D3-BD95-D426EF2C7949}#1.0#0"; "Vsflex7L.ocx"
+Object = "{1C0489F8-9EFD-423D-887A-315387F18C8F}#1.0#0"; "vsflex8l.ocx"
 Begin VB.Form Form1 
    Caption         =   "Form1"
    ClientHeight    =   7530
@@ -10,36 +10,19 @@ Begin VB.Form Form1
    ScaleHeight     =   7530
    ScaleWidth      =   15855
    StartUpPosition =   3  'Windows Default
-   Begin VB.CommandButton Command4 
-      Caption         =   "ListaProdutos"
-      Height          =   735
-      Left            =   3000
-      TabIndex        =   8
-      Top             =   5520
-      Width           =   2175
-   End
-   Begin VB.CommandButton Command3 
-      Caption         =   "Command3"
-      Height          =   735
-      Left            =   3360
-      TabIndex        =   7
-      Top             =   3360
-      Width           =   2055
-   End
-   Begin VSFlex7LCtl.VSFlexGrid Grid 
+   Begin VSFlex8LCtl.VSFlexGrid Grid 
       Height          =   7095
       Left            =   6240
-      TabIndex        =   6
+      TabIndex        =   8
       Top             =   240
       Width           =   9255
       _cx             =   16325
       _cy             =   12515
-      _ConvInfo       =   -1
       Appearance      =   1
       BorderStyle     =   1
       Enabled         =   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Courier New"
+         Name            =   "MS Sans Serif"
          Size            =   8.25
          Charset         =   0
          Weight          =   400
@@ -70,9 +53,9 @@ Begin VB.Form Form1
       GridLines       =   1
       GridLinesFixed  =   2
       GridLineWidth   =   1
-      Rows            =   1
-      Cols            =   1
-      FixedRows       =   0
+      Rows            =   50
+      Cols            =   10
+      FixedRows       =   1
       FixedCols       =   1
       RowHeightMin    =   0
       RowHeightMax    =   0
@@ -102,7 +85,7 @@ Begin VB.Form Form1
       TabBehavior     =   0
       OwnerDraw       =   0
       Editable        =   0
-      ShowComboButton =   -1  'True
+      ShowComboButton =   1
       WordWrap        =   0   'False
       TextStyle       =   0
       TextStyleFixed  =   0
@@ -116,6 +99,26 @@ Begin VB.Form Form1
       BackColorFrozen =   0
       ForeColorFrozen =   0
       WallPaperAlignment=   9
+      AccessibleName  =   ""
+      AccessibleDescription=   ""
+      AccessibleValue =   ""
+      AccessibleRole  =   24
+   End
+   Begin VB.CommandButton Command4 
+      Caption         =   "ListaProdutos"
+      Height          =   735
+      Left            =   3000
+      TabIndex        =   7
+      Top             =   5520
+      Width           =   2175
+   End
+   Begin VB.CommandButton Command3 
+      Caption         =   "Command3"
+      Height          =   735
+      Left            =   3360
+      TabIndex        =   6
+      Top             =   3360
+      Width           =   2055
    End
    Begin VB.CommandButton Command2 
       Caption         =   "Command2"
@@ -129,7 +132,7 @@ Begin VB.Form Form1
       Height          =   375
       Left            =   3000
       TabIndex        =   3
-      Text            =   "00094095469900"
+      Text            =   "03274289108"
       Top             =   2160
       Width           =   2655
    End
@@ -137,17 +140,17 @@ Begin VB.Form Form1
       Height          =   375
       Left            =   1080
       TabIndex        =   1
-      Text            =   "323"
+      Text            =   "675"
       Top             =   2160
       Width           =   1575
    End
    Begin VB.CommandButton Command1 
       Caption         =   "Consulta"
-      Height          =   1095
-      Left            =   840
+      Height          =   735
+      Left            =   960
       TabIndex        =   0
-      Top             =   2880
-      Width           =   1695
+      Top             =   2640
+      Width           =   1935
    End
    Begin VB.Label Label2 
       Caption         =   "Numero CPF/CNPJ"
@@ -171,11 +174,11 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim Myf        As New cFuncoes
+'Dim Myf        As New cFuncoes
 Dim Software   As New Software
 
 Private Sub Command1_Click()
-    Dim con    As New SPC_Brasil_Consulta
+    Dim con As New SPC_Brasil_Consulta
     'Usuario = "395793"
     'Senha = "12012016"
     'ACodigoProduto = "116"
@@ -184,20 +187,17 @@ Private Sub Command1_Click()
     'ACPF = "00829161600"
 
 
-
     Dim insumos As New insumos
-    
-'    With insumos.Add
- '       .Codigo = "5193"
-   '     .Nome = "xxx"
-  '  End With
+    ' With insumos.Add
+    '   .Codigo = "5193"
+    ' .Nome = "xxx"
+    ' End With
 
-    con.UsarArquivo = "D:\Desenvolvimento\Projetos VB 6\SPC BRASIL\SCORE12.XML"
-    con.ConsultarViaWebService "7304954", "23102020", 323, Fisica, "05293043170", insumos, Producao
-    
-    
-    
-    Call con.ListarProdutosDisponiveis("7304954", "23102020", Producao)
+    con.UsarArquivo = "C:\TempSia\respostaspc.xml"
+    'con.Gravar_Resposta_Arquivo = "C:\TempSia\respostaspc.xml"
+    con.ConsultarViaWebService "132044823", "Magoga$03", 675, Fisica, "03274289108", insumos, Producao
+
+    'Call con.ListarProdutosDisponiveis("132044823", "Magoga$03", Producao)
 
 
 
@@ -207,7 +207,7 @@ Private Sub Command1_Click()
         MsgBox "terminou"
 
         MsgBox con.Produtos.Count
-        MsgBox con.Produtos.Item(1).Nome
+        'MsgBox con.Produtos.Item(1).Nome
         MsgBox con.StrResposta
     End If
 End Sub
@@ -216,7 +216,7 @@ Private Sub Command2_Click()
     Dim Consulta As New SPC_Brasil_Consulta
 
     Consulta.UsarArquivo = "D:\Desenvolvimento\Projetos VB 6\SPC BRASIL\SPCXML.xml"
-    Consulta.ConsultarViaWebService "", "", "", Juridica, "", 2
+    'Consulta.ConsultarViaWebService "", "", "", Juridica, "", 2, Homologacao
 
     Grid.Rows = 0
     Grid.Cols = 1
@@ -655,7 +655,9 @@ Private Sub Command4_Click()
     'ACPF = "00000000191"
     'ACPF = "00829161600"
 
-    Call con.ListarProdutosDisponiveis("87854477", "Saturnino@2005", Producao)
+
+    con.Gravar_Resposta_Arquivo = "C:\tempsia\ListarProdutosDisponiveis.xml"
+    Call con.ListarProdutosDisponiveis("132044823", "Magoga$03", Producao)
 
 
 

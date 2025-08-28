@@ -47,6 +47,7 @@ Attribute VB_Ext_KEY = "Member30" ,"REG_095"
 Attribute VB_Ext_KEY = "Member31" ,"REG_096"
 Attribute VB_Ext_KEY = "Member32" ,"REG_097"
 Attribute VB_Ext_KEY = "Member33" ,"REG_CAPITALSOCIAL"
+Attribute VB_Ext_KEY = "Member34" ,"REG_XML_LIMITE_CREDITO_SUGERIDO"
 Option Explicit
 
 Dim objDom     As Object
@@ -150,6 +151,23 @@ Private mvarbytesRecebidos As String                                 'local copy
 Private mvarProdutos As Produtos
 Private mvarREG_CAPITALSOCIAL As REG_CAPITALSOCIAL
 Private mvarREG_HISTORICOPAGAMENTO As REG_HISTORICOPGTO
+Private mvarREG_LIMITECREDSUG As REG_LIMITECREDSUG
+
+
+Public Property Get REG_LIMITECREDSUG() As REG_LIMITECREDSUG
+    If mvarREG_LIMITECREDSUG Is Nothing Then
+        Set mvarREG_LIMITECREDSUG = New REG_LIMITECREDSUG
+    End If
+
+
+    Set REG_LIMITECREDSUG = mvarREG_LIMITECREDSUG
+End Property
+
+
+Public Property Set REG_LIMITECREDSUG(vData As REG_LIMITECREDSUG)
+    Set mvarREG_LIMITECREDSUG = vData
+End Property
+
 
 
 Public Property Get REG_HISTORICOPAGAMENTO() As REG_HISTORICOPGTO
@@ -283,6 +301,7 @@ Private Sub Class_Initialize()
 End Sub
 
 Private Sub Class_Terminate()
+  Set mvarREG_LIMITECREDSUG = Nothing
     Set mvarREG_HISTORICOPAGAMENTO = Nothing
     Set mvarREG_CAPITALSOCIAL = Nothing
     Set mvarProdutos = Nothing
@@ -2390,6 +2409,22 @@ Sub Monta_Reg_096(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
     End If
 End Sub
 
+Sub Monta_Reg_XML_LimiteCreditoSugerido(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
+
+    Dim Caminho As String
+    Dim I As Integer
+
+    If TipoResposta = Host Then
+    ElseIf TipoResposta = xml Then
+        Caminho = "limite-credito-sugerido/detalhe-limite-credito-sugerido"
+        For I = 0 To objDom.selectNodes("resultado/" & Caminho).length - 1
+            With REG_LIMITECREDSUG.Add
+                .Limite_Sugerido = PegaValorCampoXML(Caminho, I, "", "limite-sugerido")
+            End With
+        Next I
+    End If
+
+End Sub
 Sub Monta_Reg_097(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
 '' -- Participacao societaria da Pessoa Fisica
 
@@ -2671,9 +2706,16 @@ Private Function PegaValorCampoXML(ByVal Caminho As String, Item As Integer, ByV
 End Function
 
 Private Sub Trata_Respostas_WebService()
-    Dim Texto  As String
+    Dim Texto As String
 
     Texto = StrResposta
+
+    If Gravar_Resposta_Arquivo <> "" Then
+        Open Gravar_Resposta_Arquivo For Output As #1
+        Print #1, StrResposta
+        Close #1
+    End If
+
 
     If InStr(Texto, "<S:Fault") > 0 Then
         ' HOUVE ERRO NA CONSULTA
@@ -2731,6 +2773,10 @@ Private Sub Trata_Respostas_WebService()
             Monta_Reg_092 StrResposta, xml                           '--// CONTUMACIA  ** NAO ACHEI NENHUM CPF QUE RETORNASSE
             Monta_Reg_096 StrResposta, xml                           '--// SOCIOS
             Monta_Reg_097 StrResposta, xml                           '--// PARTICIPACAO SOCIETÁRIA
+            
+            ''-//
+            Monta_Reg_XML_LimiteCreditoSugerido StrResposta, xml                           '--// PARTICIPACAO SOCIETÁRIA
+            
         End If
 
         '        Exit Sub
@@ -2740,15 +2786,15 @@ Private Sub Trata_Respostas_WebService()
 End Sub
 
 Private Sub Trata_Respostas_ListaProdutos()
-    Dim I      As Integer
-    Dim X      As Integer
-    Dim Texto  As String
-    Dim vVar   As Variant
+    Dim I As Integer
+    Dim X As Integer
+    Dim Texto As String
+    Dim vVar As Variant
     Dim strInsumo As String
     Dim vInsumo As Variant
     Dim Codigo As String
-    Dim Nome   As String
-    Dim Tipo   As String
+    Dim Nome As String
+    Dim Tipo As String
     Dim strTemp As String
 
     Texto = StrResposta
@@ -2763,6 +2809,13 @@ Private Sub Trata_Respostas_ListaProdutos()
     End If
 
     Texto = "<produtos " & Texto & "</produtos>"
+
+
+    If Gravar_Resposta_Arquivo <> "" Then
+        Open Gravar_Resposta_Arquivo For Output As #1
+        Print #1, StrResposta
+        Close #1
+    End If
 
 
     Set objDom = CreateObject("MSXML2.DOMDocument")

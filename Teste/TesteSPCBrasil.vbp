@@ -1,8 +1,7 @@
 Type=Exe
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\Windows\SysWOW64\stdole2.tlb#OLE Automation
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\Windows\SysWOW64\stdole2.tlb#OLE Automation
 Reference=*\A..\DLL\Consulta_SPCBrasil.vbp
-Object={C0A63B80-4B21-11D3-BD95-D426EF2C7949}#1.0#0; Vsflex7L.ocx
-Reference=*\G{3DB4F5E4-7911-44F0-8654-2D2B3A01C40B}#634.0#0#C:\Programacao\myCommerce\Funcoes.dll#MyFuncoes
+Object={1C0489F8-9EFD-423D-887A-315387F18C8F}#1.0#0; vsflex8l.ocx
 Form=Form1.frm
 Class=Software; Software.cls
 IconForm="Form1"
