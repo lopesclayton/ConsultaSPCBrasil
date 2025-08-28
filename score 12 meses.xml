@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+	<S:Body>
+		<ns2:resultado xmlns:ns2="http://webservice.consulta.spcjava.spcbrasil.org/" restricao="true" data="2020-12-17T13:04:00.704-03:00">
+			<protocolo numero="2375236946" digito="5"/>
+			<operador codigo="7304954" nome="MADENORTE"/>
+			<consumidor>
+				<consumidor-pessoa-fisica data-nascimento="1982-07-10T00:00:00-03:00" email="clayton-lopes@brturbo.com.br" idade="38" nome="CLAYTON LOPES DA SILVA" nome-mae="GLORIA CAMARGO DA SILVA" numero-titulo-eleitor="73495510647" sexo="MASCULINO" signo="CANCER">
+					<cpf regiao-origem="PARANA E SANTA CATARINA" numero="04049034956"/>
+					<situacao-cpf descricao-situacao="REGULAR" data-situacao="2019-10-17T06:41:16-03:00"/>
+					<endereco logradouro="R JOUBERT DE CARVALHO" numero="623" bairro="ZONA 01" cep="87013911">
+						<cidade nome="MARINGA">
+							<estado sigla-uf="PR"/>
+						</cidade>
+					</endereco>
+					<telefone-residencial numero-ddd="44" numero="32453187"/>
+				</consumidor-pessoa-fisica>
+			</consumidor>
+			<grafia-pj/>
+			<endereco-cep-consultado/>
+			<telefone-consultado>
+				<resumo quantidade-total="0"/>
+			</telefone-consultado>
+			<telefone-vinculado-assinante-consultado>
+				<resumo quantidade-total="0"/>
+			</telefone-vinculado-assinante-consultado>
+			<ultimo-telefone-informado/>
+			<ultimo-endereco-informado>
+				<detalhe-ultimo-endereco-informado>
+					<endereco logradouro="R JOUBERT DE CARVALHO" numero="623" bairro="ZONA 01" cep="87013200">
+						<cidade nome="MARINGA">
+							<estado sigla-uf="PR"/>
+						</cidade>
+					</endereco>
+				</detalhe-ultimo-endereco-informado>
+			</ultimo-endereco-informado>
+			<alerta-documento>
+				<resumo quantidade-total="0"/>
+			</alerta-documento>
+			<spc>
+				<resumo quantidade-total="0"/>
+			</spc>
+			<cheque-lojista>
+				<resumo quantidade-total="0"/>
+			</cheque-lojista>
+			<ccf>
+				<resumo quantidade-total="1" data-ultima-ocorrencia="2019-03-25T00:00:00-03:00"/>
+				<detalhe-ccf data-ultimo-cheque="2019-03-25T00:00:00-03:00" origem="BANCO CENTRAL DO BRASIL" quantidade="1">
+					<motivo codigo="12" descricao="MOTIVO 12"/>
+					<ultimo-cheque>
+						<dados-bancarios numero-agencia="4049">
+							<banco codigo="341" nome="BANCO ITAU S/A "/>
+						</dados-bancarios>
+					</ultimo-cheque>
+				</detalhe-ccf>
+			</ccf>
+			<contra-ordem-documento-diferente>
+				<resumo quantidade-total="0"/>
+			</contra-ordem-documento-diferente>
+			<protesto>
+				<resumo quantidade-total="0"/>
+			</protesto>
+			<contra-ordem>
+				<resumo quantidade-total="0"/>
+			</contra-ordem>
+			<contumacia>
+				<resumo quantidade-total="0"/>
+			</contumacia>
+			<credito-concedido>
+				<resumo quantidade-total="0"/>
+			</credito-concedido>
+			<dados-agencia-bancaria/>
+			<consulta-realizada quantidade-dias-consultados="90">
+				<resumo quantidade-total="2" data-ultima-ocorrencia="2020-12-17T00:00:00-03:00"/>
+				<detalhe-consulta-realizada nome-associado="MADENORTE MOVEIS E MATERIAS PARA CONSTRUCAO" data-consulta="2020-12-17T13:00:55-03:00" nome-entidade-origem="CDL - CACERES / MT">
+					<origem-associado nome="CACERES">
+						<estado sigla-uf="MT"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="SEGUROS NÃOVIDA" data-consulta="2020-11-24T00:00:00-03:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="SAO PAULO">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+			</consulta-realizada>
+			<informacao-poder-judiciario>
+				<resumo quantidade-total="0"/>
+			</informacao-poder-judiciario>
+			<pendencia-financeira>
+				<resumo quantidade-total="0"/>
+			</pendencia-financeira>
+			<cheque-sem-fundo-varejo>
+				<resumo quantidade-total="0"/>
+			</cheque-sem-fundo-varejo>
+			<cheque-consulta-online-srs>
+				<resumo quantidade-total="0"/>
+			</cheque-consulta-online-srs>
+			<spc-score-12-meses>
+				<detalhe-spc-score-12-meses classe="F" horizonte="12" mesagem-interpretativa-score="O documento consultado apresenta registro(s) de inadimplência." score="0" tipo-cliente-score="RESTRITO"/>
+			</spc-score-12-meses>
+			<indice-relacionamento-mercado-pj>
+				<resumo quantidade-total="0"/>
+			</indice-relacionamento-mercado-pj>
+		</ns2:resultado>
+	</S:Body>
+</S:Envelope>

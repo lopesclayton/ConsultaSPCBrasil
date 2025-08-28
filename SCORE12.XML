@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+	<S:Body>
+		<ns2:resultado xmlns:ns2="http://webservice.consulta.spcjava.spcbrasil.org/" restricao="false" data="2020-12-17T13:29:50.454-03:00">
+			<protocolo numero="2375341907" digito="5"/>
+			<operador codigo="7304954" nome="MADENORTE"/>
+			<consumidor>
+				<consumidor-pessoa-fisica data-nascimento="1993-11-06T00:00:00-02:00" idade="27" nome="WELSON LUIZ CORREA TEIXEIRA" nome-mae="HELENA BEATRIZ SOCORE CORREA" numero-rg="002349557" sexo="MASCULINO" signo="ESCORPIAO">
+					<cpf regiao-origem="DISTRITO FEDERAL, GOIAS, MATO GROSSO, MATO GROSSO DO SUL E TOCANTINS" numero="05293043170"/>
+					<situacao-cpf/>
+					<endereco logradouro="VIA ALECRIM" numero="30" bairro="RODEIO" cep="78200000">
+						<cidade nome="CACERES">
+							<estado sigla-uf="MT"/>
+						</cidade>
+					</endereco>
+				</consumidor-pessoa-fisica>
+			</consumidor>
+			<grafia-pj/>
+			<endereco-cep-consultado/>
+			<telefone-consultado>
+				<resumo quantidade-total="0"/>
+			</telefone-consultado>
+			<telefone-vinculado-assinante-consultado>
+				<resumo quantidade-total="0"/>
+			</telefone-vinculado-assinante-consultado>
+			<ultimo-telefone-informado/>
+			<ultimo-endereco-informado>
+				<detalhe-ultimo-endereco-informado>
+					<endereco logradouro="RUA : VIA ALEGRIM S/N                             R" numero=" " bairro="RODEIO" cep="78200000">
+						<cidade nome="CACERES">
+							<estado sigla-uf="MT"/>
+						</cidade>
+					</endereco>
+				</detalhe-ultimo-endereco-informado>
+				<detalhe-ultimo-endereco-informado>
+					<endereco logradouro="RUA ALECRIM" numero="00030" bairro="RODEIO" cep="78200000">
+						<cidade nome="CACERES">
+							<estado sigla-uf="MT"/>
+						</cidade>
+					</endereco>
+				</detalhe-ultimo-endereco-informado>
+				<detalhe-ultimo-endereco-informado>
+					<endereco logradouro="R VIA ALECRIM" numero="30" bairro="RODEIO" cep="78200000">
+						<cidade nome="CACERES">
+							<estado sigla-uf="MT"/>
+						</cidade>
+					</endereco>
+				</detalhe-ultimo-endereco-informado>
+				<detalhe-ultimo-endereco-informado>
+					<endereco logradouro="RUA VIA ALECRIM 30" numero=" " bairro="RODEIO" cep="78200000">
+						<cidade nome="CACERES">
+							<estado sigla-uf="MT"/>
+						</cidade>
+					</endereco>
+				</detalhe-ultimo-endereco-informado>
+				<detalhe-ultimo-endereco-informado>
+					<endereco logradouro="Rua Via Alecrim" numero="00002" bairro="RODEIO" cep="78200000">
+						<cidade nome="CACERES">
+							<estado sigla-uf="MT"/>
+						</cidade>
+					</endereco>
+				</detalhe-ultimo-endereco-informado>
+			</ultimo-endereco-informado>
+			<alerta-documento>
+				<resumo quantidade-total="0"/>
+			</alerta-documento>
+			<spc>
+				<resumo quantidade-total="0"/>
+			</spc>
+			<cheque-lojista>
+				<resumo quantidade-total="0"/>
+			</cheque-lojista>
+			<ccf>
+				<resumo quantidade-total="0"/>
+			</ccf>
+			<contra-ordem-documento-diferente>
+				<resumo quantidade-total="0"/>
+			</contra-ordem-documento-diferente>
+			<protesto>
+				<resumo quantidade-total="0"/>
+			</protesto>
+			<contra-ordem>
+				<resumo quantidade-total="0"/>
+			</contra-ordem>
+			<contumacia>
+				<resumo quantidade-total="0"/>
+			</contumacia>
+			<credito-concedido>
+				<resumo quantidade-total="0"/>
+			</credito-concedido>
+			<dados-agencia-bancaria/>
+			<consulta-realizada quantidade-dias-consultados="90">
+				<resumo quantidade-total="5" data-ultima-ocorrencia="2020-12-09T00:00:00-03:00"/>
+				<detalhe-consulta-realizada nome-associado="CRIATIVA &amp; M
+ODA ATIVA" data-consulta="2020-12-09T16:27:46-03:00" nome-entidade-origem="CDL - CACERES / MT">
+					<origem-associado nome="CACERES">
+						<estado sigla-uf="MT"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="CRIATIVA &amp; MODA ATIVA" data-consulta="2020-12-05T12:12:31-03:00" nome-entidade-origem="CDL - CACERES / MT">
+					<origem-associado nome="CACERES">
+						<estado sigla-uf="MT"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="MADENORTE MOVEIS E MATERIAS PARA CONSTRUCAO" data-consulta="2020-12-03T15:35:29-03:00" nome-entidade-origem="CDL - CACERES / MT">
+					<origem-associado nome="CACERES">
+						<estado sigla-uf="MT"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="MOVEIS GAZIN - FILIAL 286- CÁCERES - MT" data-consulta="2020-11-19T10:13:32-03:00" nome-entidade-origem="CDL - SAO PAULO / SP">
+					<origem-associado nome="CACERES">
+						<estado sigla-uf="MT"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="ODONTO EXCELLENCE" data-consulta="2020-11-18T18:38:21-03:00" nome-entidade-origem="CDL - CACERES / MT">
+					<origem-associado nome="CACERES">
+						<estado sigla-uf="MT"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+			</consulta-realizada>
+			<informacao-poder-judiciario>
+				<resumo quantidade-total="0"/>
+			</informacao-poder-judiciario>
+			<pendencia-financeira>
+				<resumo quantidade-total="0"/>
+			</pendencia-financeira>
+			<cheque-sem-fundo-varejo>
+				<resumo quantidade-total="0"/>
+			</cheque-sem-fundo-varejo>
+			<cheque-consulta-online-srs>
+				<resumo quantidade-total="0"/>
+			</cheque-consulta-online-srs>
+			<spc-score-12-meses>
+				<detalhe-spc-score-12-meses 
+				classe="C" 
+				horizonte="12" 
+				mesagem-interpretativa-score="Não há registros de débito para o CPF: 052.930.431-70. A cada 1000 compradores classificados na classe de risco &quot;C&quot;, 200 poderá(ão) apresentar registros de inadimplência nos próximos 12 meses. Esta informação não é restritiva, mas de apoio à concessão de crédito." 
+				probabilidade="20.2" 
+				score="558" 
+				tipo-cliente-score="RESTRITO"/>
+			</spc-score-12-meses>
+			<indice-relacionamento-mercado-pj>
+				<resumo quantidade-total="0"/>
+			</indice-relacionamento-mercado-pj>
+		</ns2:resultado>
+	</S:Body>
+</S:Envelope>

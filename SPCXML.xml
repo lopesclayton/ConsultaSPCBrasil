@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+	<S:Body>
+		<ns2:resultado xmlns:ns2="http://webservice.consulta.spcjava.spcbrasil.org/" restricao="false" data="2019-07-25T14:48:46.032-03:00">
+			<protocolo numero="2133133118" digito="5"/>
+			<operador codigo="2166977" nome="CHRISTIAN PFISTER"/>
+			<consumidor>
+				<consumidor-pessoa-juridica data-fundacao="2017-02-20T00:00:00-03:00" data-ultimo-registro="2017-02-20T00:00:00-03:00" nome-comercial="R R EXTINTORES" numero-NIRE-NIRC="27101427819" numero-ultimo-registro="20170037304" razao-social="K F DE LIMA RIBEIRO">
+					<cnpj numero="27149605000103"/>
+					<situacao-cnpj descricao-situacao="ATIVA" data-situacao="2019-07-08T21:43:00-03:00"/>
+					<endereco logradouro="R OTONIEL PIMENTEL SANTOS" numero="373" bairro="FEITOSA" cep="57042430">
+						<cidade nome="MACEIO">
+							<estado sigla-uf="AL"/>
+						</cidade>
+					</endereco>
+					<natureza-juridica descricao="EMPRESARIO INDIVIDUAL" codigo="2135"/>
+					<atividade-economica-principal descricao="INSTALACAO E MANUTENCAO DE SISTEMAS CENTRAIS DE AR CONDICIONADO, DE VENTILACAO E REFRIGERACAO" codigo="4322302"/>
+					<atividade-economica-secundaria descricao="MANUTENCAO E REPARACAO DE MAQUINAS E EQUIPAMENTOS PARA USO GERAL NAO ESPECIFICADOS ANTERIORMENTE" codigo="3314710"/>
+					<atividade-economica-secundaria descricao="COMERCIO A VAREJO DE PECAS E ACESSORIOS NOVOS PARA VEICULOS AUTOMOTORES" codigo="4530703"/>
+					<atividade-economica-secundaria descricao="COMERCIO VAREJISTA DE OUTROS PRODUTOS NAO ESPECIFICADOS ANTERIORMENTE" codigo="4789099"/>
+					<atividade-economica-secundaria descricao="REPARACAO E MANUTENCAO DE OUTROS OBJETOS E EQUIPAMENTOS PESSOAIS E DOMESTICOS NAO ESPECIFICADOS ANTERIORMENTE" codigo="9529199"/>
+				</consumidor-pessoa-juridica>
+			</consumidor>
+			<grafia-pj/>
+			<socio>
+				<resumo quantidade-total="1"/>
+				<detalhe-socio data-entrada="2017-02-20T00:00:00-03:00" documento="02046246497" nome="KARYNE FATIMA DE LIMA RIBEIRO                                    " porcentual-participacao="100.0" situacao-documento="Ativo" tipo-relacionamento="INEXISTENTE" data-ultima-atualizacao="2019-03-17T00:00:00-03:00">
+					<nacionalidade nome="BRASIL"/>
+				</detalhe-socio>
+			</socio>
+			<administrador>
+				<detalhe-administrador estado-civil="CASADO" cargo-administracao="EMPRESARIO" data-entrada="2017-02-20T00:00:00-03:00" documento="02046246497" nome="KARYNE FATIMA DE LIMA RIBEIRO                             " tipo-relacionamento="NAO IDENTIFICADO" data-ultima-atualizacao="2019-03-17T00:00:00-03:00">
+					<nacionalidade nome="BRASIL"/>
+				</detalhe-administrador>
+			</administrador>
+			<spc>
+				<resumo quantidade-total="100"/>
+			</spc>
+			<ccf>
+				<resumo quantidade-total="90"/>
+			</ccf>
+			<contra-ordem-documento-diferente>
+				<resumo quantidade-total="80"/>
+			</contra-ordem-documento-diferente>
+			<acao>
+				<resumo quantidade-total="70"/>
+			</acao>
+			<protesto>
+				<resumo quantidade-total="60"/>
+			</protesto>
+			<contra-ordem>
+				<resumo quantidade-total="50"/>
+			</contra-ordem>
+			<consulta-realizada quantidade-dias-consultados="90">
+				<resumo quantidade-total="14" data-ultima-ocorrencia="2019-07-25T00:00:00-03:00"/>
+				<detalhe-consulta-realizada nome-associado="SECUR-COMERCIAL IMPORTADORA E EXPORTADORA LTDA" data-consulta="2019-07-25T14:23:44-03:00" nome-entidade-origem="CDL - SAO PAULO / SP">
+					<origem-associado nome="SAO PAULO">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="ITAU UNIBANCO S/A" data-consulta="2019-07-16T00:00:00-03:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="SAO PAULO">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="SAFRA" data-consulta="2019-07-16T00:00:00-03:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="SAO PAULO">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="RESIL" data-consulta="2019-07-12T00:00:00-03:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="DIADEMA">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="UP DISTRIBUIDORA" data-consulta="2019-07-05T00:00:00-03:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="MACEIO">
+						<estado sigla-uf="AL"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="ELECON INDUSTRIA E COMERC" data-consulta="2019-07-03T00:00:00-03:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="SALVADOR">
+						<estado sigla-uf="BA"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="GEMA COMERCIO IMPORTACAO" data-consulta="2019-06-21T00:00:00-03:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="BLUMENAU">
+						<estado sigla-uf="SC"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="ZEPPINI" data-consulta="2019-06-19T00:00:00-03:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="SAO BERNARDO DO CAMPO">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="ZEPPINI" data-consulta="2019-06-18T00:00:00-03:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="SAO BERNARDO DO CAMPO">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="FAMAC IND DE MAQUINAS LTD" data-consulta="2019-06-03T00:00:00-03:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="SCHROEDER">
+						<estado sigla-uf="SC"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="SECUR-COMERCIAL IMPORTADORA E EXPORTADORA LTDA" data-consulta="2019-05-27T21:24:51-03:00" nome-entidade-origem="CDL - SAO PAULO / SP">
+					<origem-associado nome="SAO PAULO">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="UP DISTRIBUIDORA" data-consulta="2019-05-17T00:00:00-03:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="MACEIO">
+						<estado sigla-uf="AL"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="TRANSCOMPRAS" data-consulta="2019-05-09T00:00:00-03:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="NOSSA SENHORA D">
+						<estado sigla-uf="SE"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="INMASP INDUSTRIA E COMERC" data-consulta="2019-05-07T00:00:00-03:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="MAGE">
+						<estado sigla-uf="RJ"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+			</consulta-realizada>
+			<informacao-poder-judiciario>
+				<resumo quantidade-total="40"/>
+			</informacao-poder-judiciario>
+			<contumacia-srs>
+				<resumo quantidade-total="0"/>
+			</contumacia-srs>
+			<participacao-falencia>
+				<resumo quantidade-total="30"/>
+			</participacao-falencia>
+			<pendencia-financeira>
+				<resumo quantidade-total="20"/>
+			</pendencia-financeira>
+			<referenciais-negocios/>
+			<historico-pagamento>
+				<resumo quantidade-total="4"/>
+			</historico-pagamento>
+			<relacionamento-mais-antigo-com-fornecedores/>
+			<registro-consulta>
+				<resumo quantidade-total="87"/>
+				<detalhe-registro-consulta data-consulta="2019-07-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="6"/>
+				<detalhe-registro-consulta data-consulta="2019-06-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="7"/>
+				<detalhe-registro-consulta data-consulta="2019-05-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="6"/>
+				<detalhe-registro-consulta data-consulta="2019-04-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="2"/>
+				<detalhe-registro-consulta data-consulta="2019-03-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="7"/>
+				<detalhe-registro-consulta data-consulta="2019-02-01T00:00:00-02:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="3"/>
+				<detalhe-registro-consulta data-consulta="2019-01-01T00:00:00-02:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="6"/>
+				<detalhe-registro-consulta data-consulta="2018-12-01T00:00:00-02:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="7"/>
+				<detalhe-registro-consulta data-consulta="2018-11-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="3"/>
+				<detalhe-registro-consulta data-consulta="2018-10-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="10"/>
+				<detalhe-registro-consulta data-consulta="2018-09-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="3"/>
+				<detalhe-registro-consulta data-consulta="2018-08-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="19"/>
+				<detalhe-registro-consulta data-consulta="2018-07-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="8"/>
+				<detalhe-registro-consulta data-consulta="2018-06-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="0"/>
+			</registro-consulta>
+			<ultimas-consultas>
+				<resumo quantidade-total="6"/>
+				<detalhe-ultimas-consultas cnpj-cliente="58.160.789/0001-28" data-consulta="2019-07-16T00:00:00-03:00" nome-cliente-consultante="BANCO SAFRA S/A" quantidade-consulta="2"/>
+				<detalhe-ultimas-consultas cnpj-cliente="60.701.190/0001-04" data-consulta="2019-07-16T00:00:00-03:00" nome-cliente-consultante="BANCO ITAU S/A" quantidade-consulta="1"/>
+				<detalhe-ultimas-consultas cnpj-cliente="05.393.864/0001-34" data-consulta="2019-07-12T00:00:00-03:00" nome-cliente-consultante="MD POLICABOS COMERCIO DE CABOS ELET" quantidade-consulta="1"/>
+				<detalhe-ultimas-consultas cnpj-cliente="68.124.858/0001-00" data-consulta="2019-07-12T00:00:00-03:00" nome-cliente-consultante="RESIL COMERCIAL INDUSTRIAL LTDA" quantidade-consulta="1"/>
+				<detalhe-ultimas-consultas cnpj-cliente="12.423.997/0001-71" data-consulta="2019-07-05T00:00:00-03:00" nome-cliente-consultante="UP DISTRIB PRODUTOS DESCARTAVEIS LT" quantidade-consulta="1"/>
+			</ultimas-consultas>
+			<capital-social>
+				<detalhe-capital-social nacionalidade="BRASIL" natureza="FECHADO" origem="PRIVADO" data-ultima-atualizacao="2019-03-17T00:00:00-03:00" valor-capital-autorizado="0" valor-capital-realizado="50000" valor-capital-social="50000"/>
+			</capital-social>
+			<atividade-empresa>
+				<detalhe-atividade-empresa numero-cnae="4322302" percentual-compra="0.0" percentual-vendas="0.0" quantidade-empregados="0" quantidade-filiais="0">
+					<ramo-atividade descricao="REPAR DE EQUIP DE ESCRITORIO E VENTILADORES"/>
+				</detalhe-atividade-empresa>
+			</atividade-empresa>
+			<filial/>
+			<informacoes-adicionais/>
+			<incorporacao-fusao-cisao/>
+			<principais-produtos/>
+			<mensagem-complementar origem="INFORMACOES DO CONCENTRE">
+				<mensagem>=== NADA CONSTA PARA O CNPJ CONSULTADO ===</mensagem>
+			</mensagem-complementar>
+			<mensagem-complementar origem="RECHEQUE">
+				<mensagem>=== NADA CONSTA PARA O CNPJ CONSULTADO ===</mensagem>
+			</mensagem-complementar>
+			<mensagem-complementar origem="PEFIN/REFIN/DIVIDAS VENCIDAS">
+				<mensagem>=== NADA CONSTA PARA O CNPJ CONSULTADO ===</mensagem>
+			</mensagem-complementar>
+		</ns2:resultado>
+	</S:Body>
+</S:Envelope>

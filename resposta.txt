@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+	<S:Body>
+		<ns2:resultado xmlns:ns2="http://webservice.consulta.spcjava.spcbrasil.org/" restricao="true" data="2019-02-15T17:02:48.700-02:00">
+			<protocolo numero="2052068711" digito="6"/>
+			<operador codigo="2166977" nome="CHRISTIAN PFISTER"/>
+			<consumidor>
+				<consumidor-pessoa-juridica data-fundacao="2017-02-20T00:00:00-03:00" nome-comercial="R R EXTINTORES" razao-social="K F DE LIMA RIBEIRO">
+					<cnpj numero="27149605000103"/>
+					<situacao-cnpj descricao-situacao="ATIVA" data-situacao="2019-01-17T16:51:01-02:00"/>
+					<endereco logradouro="R OTONIEL PIMENTEL SANTOS" numero="373" bairro="FEITOSA" cep="57042430">
+						<cidade nome="MACEIO">
+							<estado sigla-uf="AL"/>
+						</cidade>
+					</endereco>
+					<natureza-juridica descricao="EMPRESARIO INDIVIDUAL" codigo="2135"/>
+					<atividade-economica-principal descricao="INSTALAÇÃO E MANUTENÇÃO DE SISTEMAS CENTRAIS DE AR CONDICIONADO, DE VENTILAÇÃO E REFRIGERAÇÃO" codigo="4322302"/>
+					<atividade-economica-secundaria descricao="MANUTENÇÃO E REPARAÇÃO DE M?UINAS E EQUIPAMENTOS PARA USO GERAL N? ESPECIFICADOS ANTERIORMENTE" codigo="3314710"/>
+					<atividade-economica-secundaria descricao="REPARAÇÃO E MANUTENÇÃO DE OUTROS OBJETOS E EQUIPAMENTOS PESSOAIS E DOMESTICOS N? ESPECIFICADOS ANTERIORMENTE" codigo="9529199"/>
+					<atividade-economica-secundaria descricao="COMERCIO A VAREJO DE PE?S E ACESS?IOS NOVOS PARA VE?ULOS AUTOMOTORES" codigo="4530703"/>
+					<atividade-economica-secundaria descricao="COMERCIO VAREJISTA DE OUTROS PRODUTOS N? ESPECIFICADOS ANTERIORMENTE" codigo="4789099"/>
+				</consumidor-pessoa-juridica>
+			</consumidor>
+			<grafia-pj/>
+			<socio>
+				<resumo quantidade-total="1"/>
+				<detalhe-socio data-entrada="2017-02-20T00:00:00-03:00" documento="02046246497" nome="KARYNE FATIMA DE LIMA RIBEIRO                                    " porcentual-participacao="100.0" situacao-documento="Ativo" tipo-relacionamento="INEXISTENTE" data-ultima-atualizacao="2018-03-11T00:00:00-03:00">
+					<nacionalidade nome="BRASIL"/>
+				</detalhe-socio>
+			</socio>
+			<administrador>
+				<detalhe-administrador estado-civil="CASADO" cargo-administracao="EMPRESARIO" data-entrada="2017-02-20T00:00:00-03:00" documento="02046246497" nome="KARYNE FATIMA DE LIMA RIBEIRO                             " tipo-relacionamento="NAO IDENTIFICADO" data-ultima-atualizacao="2018-03-11T00:00:00-03:00">
+					<nacionalidade nome="BRASIL"/>
+				</detalhe-administrador>
+			</administrador>
+			<spc>
+				<resumo quantidade-total="0"/>
+			</spc>
+			<ccf>
+				<resumo quantidade-total="0"/>
+			</ccf>
+			<contra-ordem-documento-diferente>
+				<resumo quantidade-total="0"/>
+			</contra-ordem-documento-diferente>
+			<acao>
+				<resumo quantidade-total="0"/>
+			</acao>
+			<protesto>
+				<resumo quantidade-total="1" mesano-primeira-ocorrencia="01/2019" mesano-ultima-ocorrencia="01/2019" data-ultima-ocorrencia="2019-01-15T00:00:00-02:00" valor-total="2468"/>
+				<detalhe-protesto data-protesto="2019-01-15T00:00:00-02:00" valor="2468">
+					<cartorio nome="01">
+						<cidade nome="MACEIO                        ">
+							<estado sigla-uf="AL"/>
+						</cidade>
+					</cartorio>
+					<natureza-anotacao descricao-natureza-anotacao="FALTA DE PAGAMENTO"/>
+					<moeda simbolo="R$"/>
+				</detalhe-protesto>
+			</protesto>
+			<contra-ordem>
+				<resumo quantidade-total="0"/>
+			</contra-ordem>
+			<consulta-realizada quantidade-dias-consultados="90">
+				<resumo quantidade-total="25" data-ultima-ocorrencia="2019-02-15T00:00:00-02:00"/>
+				<detalhe-consulta-realizada nome-associado="SECUR-COMERCIAL IMPORTADORA E EXPORTADORA LTDA" data-consulta="2019-02-15T16:53:37-02:00" nome-entidade-origem="CDL - SAO PAULO / SP">
+					<origem-associado nome="SAO PAULO">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="TC PNEUS" data-consulta="2019-02-11T16:53:53-02:00" nome-entidade-origem="CDL - MACEIO / AL">
+					<origem-associado nome="MACEIO">
+						<estado sigla-uf="AL"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="SECUR-COMERCIAL IMPORTADORA E EXPORTADORA LTDA" data-consulta="2019-02-05T15:45:57-02:00" nome-entidade-origem="CDL - SAO PAULO / SP">
+					<origem-associado nome="SAO PAULO">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="FAMAC IND DE MAQUINAS LTD" data-consulta="2019-01-25T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="SCHROEDER">
+						<estado sigla-uf="SC"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="ZEUS DO BRASIL LTDA" data-consulta="2019-01-23T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="BLUMENAU">
+						<estado sigla-uf="SC"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="EXTINPEL EXTINTORES PLATINA" data-consulta="2019-01-17T16:51:00-02:00" nome-entidade-origem="Associação Comercial - SANTO ANTONIO DA PLATINA / PR">
+					<origem-associado nome="SANTO ANTONIO DA PLATINA">
+						<estado sigla-uf="PR"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="ZEUS DO BRASIL LTDA" data-consulta="2019-01-17T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="BLUMENAU">
+						<estado sigla-uf="SC"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="PROSCORE" data-consulta="2019-01-11T08:34:42-02:00" nome-entidade-origem="CDL - SAO PAULO / SP">
+					<origem-associado nome="CAMPINAS">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="PROSCORE" data-consulta="2019-01-10T11:02:27-02:00" nome-entidade-origem="CDL - SAO PAULO / SP">
+					<origem-associado nome="CAMPINAS">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="BBS REPRESENTACOES" data-consulta="2019-01-09T11:06:15-02:00" nome-entidade-origem="CDL - CASCAVEL / PR">
+					<origem-associado nome="CASCAVEL">
+						<estado sigla-uf="PR"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="METALURGICA VARB IND E COM LTDA" data-consulta="2019-01-09T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="PIRACICABA">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="ARCELORMITTAL BRASIL" data-consulta="2019-01-04T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP"/>
+				<detalhe-consulta-realizada nome-associado="GENEBRE BR INT NEGOCIOS L" data-consulta="2019-01-03T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="CAJAMAR">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="A ELETRICIDADE   E   LOJ? A ELETRICIDADE" data-consulta="2018-12-19T15:55:14-02:00" nome-entidade-origem="CDL - ARACAJU / SE">
+					<origem-associado nome="ARACAJU">
+						<estado sigla-uf="SE"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="COMAFER" data-consulta="2018-12-18T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="MACEIO">
+						<estado sigla-uf="AL"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="ALVIPEX DISTRIBUIDORA" data-consulta="2018-12-17T11:55:20-02:00" nome-entidade-origem="CDL - ARACAJU / SE">
+					<origem-associado nome="ARACAJU">
+						<estado sigla-uf="SE"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="FAMAC IND DE MAQUINAS LTD" data-consulta="2018-12-14T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="SCHROEDER">
+						<estado sigla-uf="SC"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="ELETRICA ALIANCA" data-consulta="2018-12-13T17:12:35-02:00" nome-entidade-origem="CDL - ARACAJU / SE">
+					<origem-associado nome="ARACAJU">
+						<estado sigla-uf="SE"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="ZEUS DO BRASIL LTDA" data-consulta="2018-12-12T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="BLUMENAU">
+						<estado sigla-uf="SC"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="FABRICA FORTALEZA" data-consulta="2018-12-11T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="FORTALEZA">
+						<estado sigla-uf="CE"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="CENTERFAC" data-consulta="2018-12-10T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="BAURU">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="ZEUS DO BRASIL LTDA" data-consulta="2018-12-06T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="BLUMENAU">
+						<estado sigla-uf="SC"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="BBS REPRESENTACOES" data-consulta="2018-12-04T07:38:48-02:00" nome-entidade-origem="CDL - CASCAVEL / PR">
+					<origem-associado nome="CASCAVEL">
+						<estado sigla-uf="PR"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="RESIL" data-consulta="2018-11-21T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="DIADEMA">
+						<estado sigla-uf="SP"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+				<detalhe-consulta-realizada nome-associado="INMASP INDUSTRIA E COMERC" data-consulta="2018-11-06T00:00:00-02:00" nome-entidade-origem="SAO PAULO / SP">
+					<origem-associado nome="MAGE">
+						<estado sigla-uf="RJ"/>
+					</origem-associado>
+				</detalhe-consulta-realizada>
+			</consulta-realizada>
+			<informacao-poder-judiciario>
+				<resumo quantidade-total="0"/>
+			</informacao-poder-judiciario>
+			<contumacia-srs>
+				<resumo quantidade-total="0"/>
+			</contumacia-srs>
+			<participacao-falencia>
+				<resumo quantidade-total="0"/>
+			</participacao-falencia>
+			<pendencia-financeira>
+				<resumo quantidade-total="0"/>
+			</pendencia-financeira>
+			<referenciais-negocios>
+				<detalhe-referenciais-negocios data-potencial="2018-12-14T00:00:00-02:00" descricao-negocio="ULTIMA COMPRA" media-potencial="5103" valor-potencial="2360"/>
+				<detalhe-referenciais-negocios data-potencial="2018-07-20T00:00:00-03:00" descricao-negocio="MAIOR FATURA" media-potencial="5103" valor-potencial="7847"/>
+				<detalhe-referenciais-negocios data-potencial="2018-07-20T00:00:00-03:00" descricao-negocio="MAIOR ACUMULO" media-potencial="5103" valor-potencial="7847"/>
+			</referenciais-negocios>
+			<historico-pagamento>
+				<resumo quantidade-total="3"/>
+				<detalhe-historico-pagamento descricao-periodo="PONTUAL" percentual-periodo="33" quantidade-fontes="1" quantidade-periodo="1"/>
+				<detalhe-historico-pagamento descricao-periodo="8-15" percentual-periodo="0" quantidade-fontes="1" quantidade-periodo="0"/>
+				<detalhe-historico-pagamento descricao-periodo="16-30" percentual-periodo="0" quantidade-fontes="1" quantidade-periodo="0"/>
+				<detalhe-historico-pagamento descricao-periodo="31-60" percentual-periodo="67" quantidade-fontes="1" quantidade-periodo="2"/>
+				<detalhe-historico-pagamento descricao-periodo="+60" percentual-periodo="0" quantidade-fontes="1" quantidade-periodo="0"/>
+				<detalhe-historico-pagamento descricao-periodo="A VISTA" percentual-periodo="0" quantidade-fontes="1" quantidade-periodo="0"/>
+			</historico-pagamento>
+			<relacionamento-mais-antigo-com-fornecedores>
+				<detalhe-relacionamento-mais-antigo-com-fornecedores data-relacionamento-mais-antigo="2018-07-01T00:00:00-03:00"/>
+			</relacionamento-mais-antigo-com-fornecedores>
+			<registro-consulta>
+				<resumo quantidade-total="57"/>
+				<detalhe-registro-consulta data-consulta="2019-02-01T00:00:00-02:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="1"/>
+				<detalhe-registro-consulta data-consulta="2019-01-01T00:00:00-02:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="6"/>
+				<detalhe-registro-consulta data-consulta="2018-12-01T00:00:00-02:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="7"/>
+				<detalhe-registro-consulta data-consulta="2018-11-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="3"/>
+				<detalhe-registro-consulta data-consulta="2018-10-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="10"/>
+				<detalhe-registro-consulta data-consulta="2018-09-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="3"/>
+				<detalhe-registro-consulta data-consulta="2018-08-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="19"/>
+				<detalhe-registro-consulta data-consulta="2018-07-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="8"/>
+				<detalhe-registro-consulta data-consulta="2018-06-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="0"/>
+				<detalhe-registro-consulta data-consulta="2018-05-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="0"/>
+				<detalhe-registro-consulta data-consulta="2018-04-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="0"/>
+				<detalhe-registro-consulta data-consulta="2018-03-01T00:00:00-03:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="0"/>
+				<detalhe-registro-consulta data-consulta="2018-02-01T00:00:00-02:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="0"/>
+				<detalhe-registro-consulta data-consulta="2018-01-01T00:00:00-02:00" quantidade-consulta-banco="0" quantidade-consulta-empresa="0"/>
+			</registro-consulta>
+			<ultimas-consultas>
+				<resumo quantidade-total="5"/>
+				<detalhe-ultimas-consultas cnpj-cliente="17.977.333/0001-78" data-consulta="2019-02-15T00:00:00-02:00" nome-cliente-consultante="ACERVAL INDUSTRIA E COMERCIO DE VAL" quantidade-consulta="1"/>
+				<detalhe-ultimas-consultas cnpj-cliente="84.432.087/0001-66" data-consulta="2019-01-25T00:00:00-02:00" nome-cliente-consultante="FAMAC INDUSTRIA DE MAQUINAS LTDA" quantidade-consulta="1"/>
+				<detalhe-ultimas-consultas cnpj-cliente="82.699.588/0001-88" data-consulta="2019-01-23T00:00:00-02:00" nome-cliente-consultante="ZEUS DO BRASIL LTDA EPP" quantidade-consulta="1"/>
+				<detalhe-ultimas-consultas cnpj-cliente="82.699.588/0001-88" data-consulta="2019-01-17T00:00:00-02:00" nome-cliente-consultante="ZEUS DO BRASIL LTDA EPP" quantidade-consulta="1"/>
+				<detalhe-ultimas-consultas cnpj-cliente="43.830.462/0001-49" data-consulta="2019-01-09T00:00:00-02:00" nome-cliente-consultante="METALURGICA VARB INDUSTRIA E COMERC" quantidade-consulta="1"/>
+			</ultimas-consultas>
+			<capital-social>
+				<detalhe-capital-social nacionalidade="BRASIL" natureza="FECHADO" origem="PRIVADO" data-ultima-atualizacao="2018-03-11T00:00:00-03:00" valor-capital-autorizado="0" valor-capital-realizado="50000" valor-capital-social="50000"/>
+			</capital-social>
+			<atividade-empresa>
+				<detalhe-atividade-empresa/>
+			</atividade-empresa>
+			<filial/>
+			<informacoes-adicionais/>
+			<incorporacao-fusao-cisao/>
+			<principais-produtos/>
+			<mensagem-complementar origem="RECHEQUE">
+				<mensagem>=== NADA CONSTA PARA O CNPJ CONSULTADO ===</mensagem>
+			</mensagem-complementar>
+			<mensagem-complementar origem="PEFIN/REFIN/D?IDAS VENCIDAS">
+				<mensagem>=== NADA CONSTA PARA O CNPJ CONSULTADO ===</mensagem>
+			</mensagem-complementar>
+		</ns2:resultado>
+	</S:Body>
+</S:Envelope>
