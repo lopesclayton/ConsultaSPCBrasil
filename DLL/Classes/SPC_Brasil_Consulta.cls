@@ -47,12 +47,13 @@ Attribute VB_Ext_KEY = "Member30" ,"REG_095"
 Attribute VB_Ext_KEY = "Member31" ,"REG_096"
 Attribute VB_Ext_KEY = "Member32" ,"REG_097"
 Attribute VB_Ext_KEY = "Member33" ,"REG_CAPITALSOCIAL"
-Attribute VB_Ext_KEY = "Member34" ,"REG_INDICE_GASTOS"
-Attribute VB_Ext_KEY = "Member35" ,"REG_INDICE_PONTUAL"
-Attribute VB_Ext_KEY = "Member36" ,"REG_LIMITECREDSUG"
-Attribute VB_Ext_KEY = "Member37" ,"REG_RENDA_PRESUMIDA"
-Attribute VB_Ext_KEY = "Member38" ,"REG_COMPROM_RENDA"
-Attribute VB_Ext_KEY = "Member39" ,"REG_SCORE_POSITIVO"
+Attribute VB_Ext_KEY = "Member34" ,"REG_COMPROM_RENDA"
+Attribute VB_Ext_KEY = "Member35" ,"REG_GASTO_PJ"
+Attribute VB_Ext_KEY = "Member36" ,"REG_INDICE_GASTOS"
+Attribute VB_Ext_KEY = "Member37" ,"REG_INDICE_PONTUAL"
+Attribute VB_Ext_KEY = "Member38" ,"REG_LIMITECREDSUG"
+Attribute VB_Ext_KEY = "Member39" ,"REG_RENDA_PRESUMIDA"
+Attribute VB_Ext_KEY = "Member40" ,"REG_SCORE_POSITIVO"
 Option Explicit
 
 Dim objDom As Object
@@ -162,6 +163,30 @@ Private mvarREG_INDICE_GASTOS As REG_INDICE_GASTOS
 Private mvarREG_SCORE_POSITIVO As REG_SCORE_POSITIVO
 Private mvarREG_RENDA_PRESUMIDA As REG_RENDA_PRESUMIDA
 Private mvarREG_INDICE_PONTUAL As REG_INDICE_PONTUAL
+Private mvarREG_ATIVIDADE_EMPRESA As REG_ATIV_EMP
+Private mvarREG_GASTO_PJ As REG_GASTO_PJ
+
+
+Public Property Get REG_GASTO_PJ() As REG_GASTO_PJ
+    Set REG_GASTO_PJ = mvarREG_GASTO_PJ
+End Property
+
+
+Public Property Set REG_GASTO_PJ(vData As REG_GASTO_PJ)
+    Set mvarREG_GASTO_PJ = vData
+End Property
+
+
+
+Public Property Get REG_ATIVIDADE_EMPRESA() As REG_ATIV_EMP
+    Set REG_ATIVIDADE_EMPRESA = mvarREG_ATIVIDADE_EMPRESA
+End Property
+
+
+Public Property Set REG_ATIVIDADE_EMPRESA(vData As REG_ATIV_EMP)
+    Set mvarREG_ATIVIDADE_EMPRESA = vData
+End Property
+
 
 
 Public Property Get REG_INDICE_PONTUAL() As REG_INDICE_PONTUAL
@@ -380,9 +405,15 @@ Private Sub Class_Initialize()
     Set mvarREG_SCORE_POSITIVO = New REG_SCORE_POSITIVO
     'create the mREG_RENDA_PRESUMIDA object when the SPC_Brasil_Consulta class is created
     Set mvarREG_RENDA_PRESUMIDA = New REG_RENDA_PRESUMIDA
+  'create the mREG_ATIVIDADE_EMPRESA object when the SPC_Brasil_Consulta class is created
+  Set mvarREG_ATIVIDADE_EMPRESA = New REG_ATIV_EMP
+  'create the mREG_GASTO_PJ object when the SPC_Brasil_Consulta class is created
+  Set mvarREG_GASTO_PJ = New REG_GASTO_PJ
 End Sub
 
 Private Sub Class_Terminate()
+  Set mvarREG_GASTO_PJ = Nothing
+  Set mvarREG_ATIVIDADE_EMPRESA = Nothing
     Set mvarREG_INDICE_PONTUAL = Nothing
     Set mvarREG_RENDA_PRESUMIDA = Nothing
     Set mvarREG_SCORE_POSITIVO = Nothing
@@ -2514,6 +2545,36 @@ Sub Monta_Reg_XML_ScoreCadastroPositivo(ByVal Texto As String, ByVal TipoRespost
 
 End Sub
 
+Sub Monta_Reg_XML_IndiceGastosPJ(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
+    Dim Caminho As String
+    Dim I As Integer
+
+    If TipoResposta = Host Then
+    ElseIf TipoResposta = xml Then
+        Caminho = "gasto-estimado-pj/detalhe-gasto-estimado-pj"
+        With REG_GASTO_PJ
+            .ValorTotal = PegaValorCampoXML(Caminho, I, "", "valor", True)
+        End With
+    End If
+
+End Sub
+Sub Monta_Reg_XML_AtividadeEmpresa(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
+
+    Dim Caminho As String
+    Dim I As Integer
+
+    If TipoResposta = Host Then
+    ElseIf TipoResposta = xml Then
+        Caminho = "atividade-empresa/detalhe-atividade-empresa"
+        With REG_ATIVIDADE_EMPRESA
+            .CodigoPrincipal = PegaValorCampoXML(Caminho, I, "ramo-atividade", "codigo")
+            .AtividadePrincipal = PegaValorCampoXML(Caminho, I, "ramo-atividade", "descricao")
+            .CodigoSecundaria = PegaValorCampoXML(Caminho, I, "atividades-economicas-secundarias", "codigo")
+            .AtividadeSecundaria = PegaValorCampoXML(Caminho, I, "atividades-economicas-secundarias", "descricao")
+        End With
+    End If
+
+End Sub
 Sub Monta_Reg_XML_RendaPresumida(ByVal Texto As String, ByVal TipoResposta As eTipoRespostaSpc)
     Dim Caminho As String
     Dim I As Integer
@@ -2960,6 +3021,11 @@ Private Sub Trata_Respostas_WebService()
             Monta_Reg_XML_IndicePontualidade StrResposta, xml        ''// INDICE PONTUALIDADE PAGAMENTO NO CADASTRO POSITIVO
             Monta_Reg_XML_ScoreCadastroPositivo StrResposta, xml     ''// MOSTRA O SCORE DO CADASTRO POSITIVO
             Monta_Reg_XML_RendaPresumida StrResposta, xml            ''// RENDA PRESUMIDA
+            
+            Monta_Reg_XML_AtividadeEmpresa StrResposta, xml            ''// ATIVIDADE EMPRESA
+            Monta_Reg_XML_IndiceGastosPJ StrResposta, xml            ''// GASTRO ESTIMADO PJ
+            
+            
 
         End If
 

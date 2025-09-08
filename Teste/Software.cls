@@ -22,11 +22,11 @@ Attribute VB_Exposed = False
 Option Explicit
 
 
-Private mvarNomeEmpresa As String 'local copy
-Private mvarTelefoneEmpresa As String 'local copy
-Private mvarCidadeEmpresa As String 'local copy
-Private mvarVersaoSoftware As String 'local copy
-Private mvarNomeSoftware As String 'local copy
+Private mvarNomeEmpresa As String    'local copy
+Private mvarTelefoneEmpresa As String    'local copy
+Private mvarCidadeEmpresa As String    'local copy
+Private mvarVersaoSoftware As String    'local copy
+Private mvarNomeSoftware As String    'local copy
 '
 Private mvarTitleBarDefaultColor1 As Long
 Private mvarTitleBarDefaultColor2 As Long
@@ -108,7 +108,7 @@ Private Sub Class_Initialize()
 
 
     On Error GoTo 0
-    
+
     'Call clsSoftware.SetConexao(CN)                                                 '-// para rastrear a queda de conexao
 
 End Sub
@@ -173,7 +173,7 @@ Function CriarPastaSuporteRemoto()
         Set objShortCut = Nothing
         On Error GoTo 0
     End If
-    
+
     If Dir(App.Path & "\SuporteWeb.exe", vbArchive) <> "" Then
         On Error Resume Next
         Set objShell = CreateObject("Wscript.Shell")
@@ -199,8 +199,8 @@ End Function
 
 Private Sub Class_Terminate()
 '-//SETA DE VOLTA AS CORES PADROES
-    'Call MyF.GetColorTitleBarDeafult(mvarTitleBarDefaultColor1, mvarTitleBarDefaultColor2, mvarTitleBarFonteDefaultColor)
-    'WriteINI App.path & "\" & clsVar.ArquivoConfiguracao, "Cores", GetComputer(), mvarTitleBarDefaultColor1 & "," & mvarTitleBarDefaultColor2 & "," & mvarTitleBarFonteDefaultColor
+'Call MyF.GetColorTitleBarDeafult(mvarTitleBarDefaultColor1, mvarTitleBarDefaultColor2, mvarTitleBarFonteDefaultColor)
+'WriteINI App.path & "\" & clsVar.ArquivoConfiguracao, "Cores", GetComputer(), mvarTitleBarDefaultColor1 & "," & mvarTitleBarDefaultColor2 & "," & mvarTitleBarFonteDefaultColor
 End Sub
 
 

@@ -195,7 +195,7 @@ Private Sub Command1_Click()
     ' .Nome = "xxx"
     ' End With
 
-    con.UsarArquivo = "C:\TempSia\respostaspc.xml"
+    con.UsarArquivo = "C:\TempSia\ret PJ.xml"
     'con.Gravar_Resposta_Arquivo = "C:\TempSia\respostaspc.xml"
     con.ConsultarViaWebService "132044823", "Magoga$03", 675, Fisica, "03274289108", insumos, Producao
 
@@ -209,7 +209,7 @@ Private Sub Command1_Click()
         MsgBox "terminou"
 
 
-        MsgBox con.REG_LIMITECREDSUG(1).Limite_Sugerido
+    If con.REG_LIMITECREDSUG.Count > 0 Then MsgBox con.REG_LIMITECREDSUG(1).Limite_Sugerido
 
         Dim msg As String
         msg = "Classificacao: " & con.REG_COMPROM_RENDA.Classificacao & vbCrLf
@@ -247,8 +247,8 @@ End Sub
 Private Sub Command2_Click()
     Dim Consulta As New SPC_Brasil_Consulta
 
-    Consulta.UsarArquivo = "D:\Desenvolvimento\Projetos VB 6\SPC BRASIL\SPCXML.xml"
-    'Consulta.ConsultarViaWebService "", "", "", Juridica, "", 2, Homologacao
+    Consulta.UsarArquivo = "C:\TempSia\ret PJ.xml"
+    Consulta.ConsultarViaWebService "", "", "", Juridica, "", Nothing, Homologacao
 
     Grid.Rows = 0
     Grid.Cols = 1
@@ -725,3 +725,4 @@ Private Sub Command4_Click()
     End If
 
 End Sub
+
