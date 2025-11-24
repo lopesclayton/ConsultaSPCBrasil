@@ -2767,7 +2767,8 @@ Public Function ConsultarViaWebService(ByVal Usuario As String, _
 
     'PRODUCAO
     If Ambiente = eAmbienteSPCBrasil.Producao Then
-        strUrl = "https://servicos.spc.org.br/spc/remoting/ws/consulta/consultaWebService"
+        'strUrl = "https://servicos.spc.org.br/spc/remoting/ws/consulta/consultaWebService"
+        strUrl = "https://api.spcbrasil.com.br/spc/remoting/ws/consulta/consultaWebService"
     ElseIf Ambiente = eAmbienteSPCBrasil.Homologacao Then
         'HOMOLOGACAO
         strUrl = "https://treina.spc.org.br/spc/remoting/ws/consulta/consultaWebService"

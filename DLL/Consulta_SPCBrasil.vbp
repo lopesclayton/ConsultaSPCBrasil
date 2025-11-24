@@ -1,6 +1,6 @@
 Type=OleDll
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\Windows\SysWOW64\stdole2.tlb#OLE Automation
-Reference=*\G{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0#..\..\..\..\Windows\SysWow64\MSWINSCK.OCX#Microsoft Winsock Control 6.0 (SP6)
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\Windows\SysWOW64\stdole2.tlb#OLE Automation
+Reference=*\G{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0#C:\Windows\SysWow64\MSWINSCK.OCX#Microsoft Winsock Control 6.0 (SP6)
 Class=REG_097x; Classes\REG_097x.cls
 Class=SPC_Brasil_Consulta; Classes\SPC_Brasil_Consulta.cls
 Class=Header_Resposta; Classes\Header_Resposta.cls
@@ -91,7 +91,7 @@ CompatibleMode="0"
 CompatibleEXE32="Consulta_SPCBrasil.dll"
 MajorVer=2
 MinorVer=0
-RevisionVer=21
+RevisionVer=23
 AutoIncrementVer=1
 ServerSupportFiles=0
 VersionCompanyName="Visual"

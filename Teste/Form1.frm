@@ -209,7 +209,7 @@ Private Sub Command1_Click()
         MsgBox "terminou"
 
 
-    If con.REG_LIMITECREDSUG.Count > 0 Then MsgBox con.REG_LIMITECREDSUG(1).Limite_Sugerido
+'    If con.REG_LIMITECREDSUG.Count > 0 Then MsgBox con.REG_LIMITECREDSUG(1).Limite_Sugerido
 
         Dim msg As String
         msg = "Classificacao: " & con.REG_COMPROM_RENDA.Classificacao & vbCrLf
